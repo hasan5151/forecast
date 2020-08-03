@@ -1,0 +1,23 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings">
+
+        <DropDownPreference
+            app:defaultValue="@string/celsius"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="degreeType"
+            app:title="@string/unit"
+            app:useSimpleSummaryProvider="true" />
+
+        <DropDownPreference
+            app:defaultValue="@string/fifteen"
+            app:entries="@array/update_rate"
+            app:entryValues="@array/update_rate"
+            app:key="updateRate"
+            app:title="@string/autorefresh"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

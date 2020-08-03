@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_marginTop="@dimen/top"
+        app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Xxxx"
+        android:textColor="@android:color/white"
+        style="bold"
+        android:textSize="35sp"
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/city"
+         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Last Update: xx.xx.2020"
+        android:textColor="@android:color/darker_gray"
+        style="bold"
+        android:textSize="15sp"
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/top20"
+        android:id="@+id/tempLinear"
+        app:layout_constraintTop_toBottomOf="@id/update"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    <ImageView
+        android:src="@drawable/a01d"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_vertical"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+
+    <TextView
+        android:text="xx°"
+        android:textColor="@android:color/white"
+        style="bold"
+        android:textSize="62sp"
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/tempLinear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@android:color/white"
+        android:id="@+id/others"
+        android:textSize="16sp"
+        android:text="Xxxx xx°"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/top20"
+        app:layout_constraintTop_toBottomOf="@+id/others"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@android:color/white"
+        android:id="@+id/description"
+        android:textSize="22sp"
+        android:text="Xxxx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

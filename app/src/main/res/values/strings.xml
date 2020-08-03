@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Прогноз погоды</string>
+    <string name="search">Поиск</string>
+    <string name="settings">Настройки</string>
+    <string name="lastupdate">Последнее обновление</string>
+    <string name="feelslike">Ощущается как</string>
+    <string name="celsius">metric</string>
+    <string name="fifteen">15</string>
+    <string name="unit">Единица измерения</string>
+    <string name="autorefresh">Авто. обновления (минута)</string>
+    <string name="city_already_added">Город уже добавлен</string>
+    <string name="city_added_tolist_successfully">Город удачно добавлен в список</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="addcity">Добавить город</string>
+    <string name="city_question">Хотите в список добавить этот город?</string>
+    <string name="delete">Удалить город из списка</string>
+    <string name="deleteToolbar">Удалить</string>
+    <string name="city_couldnt_add_no_internet_connection">Интернет отсуствует, город невозможно добавить</string>
+    <string name="there_is_no_recorded_city">Список пустой, нет сохраненных городов</string>
+</resources>
