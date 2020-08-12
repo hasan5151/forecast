@@ -1,24 +1,16 @@
 package com.beeline.forecast.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.paging.PagedList
 import com.beeline.forecast.MainCoroutineRule
 import com.beeline.forecast.TestModels
 import com.beeline.forecast.data.api.ApiService
 import com.beeline.forecast.data.api.Response
 import com.beeline.forecast.data.models.ListWeather
-import com.beeline.forecast.data.models.WeatherFactory
 import com.beeline.forecast.data.repo.ApiRepo
 import com.beeline.forecast.data.repo.FetchRepo
 import com.beeline.forecast.data.repo.RoomRepo
-import com.beeline.forecast.data.room.dao.LocalWeatherDAO
-import com.beeline.forecast.data.room.entity.LocalWeather
 import com.google.gson.Gson
-import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
@@ -29,11 +21,6 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
-import java.lang.Exception
-import java.net.UnknownHostException
-import java.util.concurrent.CountDownLatch
-import java.util.concurrent.TimeUnit
-import java.util.concurrent.TimeoutException
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)

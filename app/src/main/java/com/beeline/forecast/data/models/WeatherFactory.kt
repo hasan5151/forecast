@@ -8,7 +8,7 @@ import com.beeline.forecast.data.room.entity.LocalWeather
 class WeatherFactory(private val weather: WeatherForecast){
 
     fun turnLocal() : LocalWeather = LocalWeather(
-            weather.id,
+            weather.id!!,
             weather.name,
             System.currentTimeMillis(),
             weather.main?.temp?.toInt(),

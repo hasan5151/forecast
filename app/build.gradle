@@ -18,6 +18,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+       
+        
     }
 
     buildTypes {
@@ -74,6 +77,7 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.5"
     kapt "androidx.room:room-compiler:2.2.5"
     implementation "androidx.room:room-ktx:2.2.5"
+
 
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"

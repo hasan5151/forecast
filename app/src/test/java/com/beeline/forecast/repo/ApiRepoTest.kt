@@ -8,37 +8,28 @@ import com.beeline.forecast.data.api.Response
 import com.beeline.forecast.data.api.failed
 import com.beeline.forecast.data.api.succeeded
 import com.beeline.forecast.data.models.ListWeather
-import com.beeline.forecast.data.models.Weather
 import com.beeline.forecast.data.models.WeatherForecast
 import com.beeline.forecast.data.repo.ApiRepo
 import com.google.gson.Gson
-import junit.framework.Assert
 import junit.framework.Assert.assertFalse
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
-import retrofit2.HttpException
-import java.lang.Exception
 import java.net.UnknownHostException
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class ApiRepoTest {
-
 
     @get:Rule
     var instantTaskExecutorRule: InstantTaskExecutorRule = InstantTaskExecutorRule()
@@ -47,20 +38,17 @@ class ApiRepoTest {
     @get:Rule
     var mainCoroutineRule = MainCoroutineRule()
 
-
     @Mock
     private lateinit var apiService: ApiService
 
     @Mock
     private lateinit var apiRepo: ApiRepo
 
-
     @Before
     fun before(){
         MockitoAnnotations.initMocks(this)
         apiRepo = ApiRepo(apiService,Dispatchers.Main)
     }
-
 
     @Test
     fun `getWeather with exception`(){
@@ -83,7 +71,6 @@ class ApiRepoTest {
             assertEquals(answer.data,weather)
         }
     }
-
 
     @Test
     fun `getGroupWeather with exception`(){

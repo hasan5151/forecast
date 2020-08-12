@@ -35,7 +35,7 @@ abstract class DeleteAdapter(private val deleteModels: List<DeleteModel>) : Recy
             mainViewHolder.imgUnchecked.setImageResource(R.drawable.ic_home_white_48dp)
             mainViewHolder.imgChecked.visibility = View.INVISIBLE
         }
-        mainViewHolder.lblTitle.text = deleteModels[i].localWeather.getName()
+        mainViewHolder.lblTitle.text = deleteModels[i].localWeather.name
     }
 
     override fun getItemCount(): Int = deleteModels.size
