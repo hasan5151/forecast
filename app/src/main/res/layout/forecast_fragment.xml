@@ -12,7 +12,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
