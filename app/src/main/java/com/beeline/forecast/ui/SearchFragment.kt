@@ -109,7 +109,7 @@ class SearchFragment  : Fragment(), SearchView.OnQueryTextListener{
     }
 
     fun showDialog(city: CityJson){
-        MaterialAlertDialogBuilder(context)
+        MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.addcity))
             .setMessage(resources.getString(R.string.city_question))
             .setNegativeButton(resources.getString(R.string.no)) { dialog, which ->
