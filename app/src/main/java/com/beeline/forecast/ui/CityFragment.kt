@@ -12,8 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.beeline.forecast.R
@@ -142,6 +145,8 @@ class CityFragment : Fragment() {
                     NavOptions.Builder().setPopUpTo(R.id.forecastFragment, true).build()
                 Navigation.findNavController(requireView())
                     .navigate(R.id.forecastFragment, null, navOptions)
+
+
 
             }
         }

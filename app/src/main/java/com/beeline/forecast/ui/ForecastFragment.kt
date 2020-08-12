@@ -9,8 +9,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +22,6 @@ import com.beeline.forecast.R
 import com.beeline.forecast.adapters.ForecastAdapter
 import com.beeline.forecast.data.api.Response
 import com.beeline.forecast.viewmodel.ForecastVM
-import kotlinx.android.synthetic.main.city_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 /**
@@ -32,6 +34,10 @@ class ForecastFragment : Fragment() {
     private lateinit var forecastAdapter : ForecastAdapter
     private lateinit var placeholderText: TextView
     private lateinit var placeHolderIV: ImageView
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,16 +55,8 @@ class ForecastFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         swipeRefreshLayout = view.findViewById(R.id.swiperefresh)
 
-        setToolbar()
         setAdapter()
         swipe()
-     }
-
-    private fun setToolbar() {
-        val toolbar = view?.rootView?.findViewById<Toolbar>(R.id.toolbar)
-        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        toolbar?.setBackgroundColor(ContextCompat.getColor(requireContext(),android.R.color.transparent))
-        toolbar?.title = ""
     }
 
     private fun swipe() {

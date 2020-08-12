@@ -39,6 +39,4 @@
         android:id="@+id/placeHolderIV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,11 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.beeline.forecast.R
 import com.beeline.forecast.utils.Prefs
 import com.beeline.forecast.utils.WorkManagerUtil
@@ -21,6 +26,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setToolbar()
+
         initDb()
         workManagerUtil.checkWorkManager()
         prefs.getDefault().registerOnSharedPreferenceChangeListener(this)
@@ -32,8 +38,13 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         toolbar.title =""
         toolbar.bringToFront()
         setSupportActionBar(toolbar)
-    }
 
+        val navController = findNavController(this,R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
+        //NavigationUI.setupActionBarWithNavController(this, navController)
+    }
 
     private fun initDb() {
         when(prefs.isInitial){

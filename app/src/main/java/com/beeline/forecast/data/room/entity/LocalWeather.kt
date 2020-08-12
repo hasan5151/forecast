@@ -14,7 +14,6 @@ class LocalWeather(
     var description: String?,
     var icon: String?
 ) {
-
     override fun equals(o: Any?): Boolean {
         if (this === o) return true
         if (o == null || javaClass != o.javaClass) return false
@@ -30,5 +29,4 @@ class LocalWeather(
     override fun hashCode(): Int {
         return Objects.hash(id, name, lastUpdate, feels_like, description, icon)
     }
-
 }

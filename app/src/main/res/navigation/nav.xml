@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/forecastFragment"
         android:name="com.beeline.forecast.ui.ForecastFragment"
-         android:label="ForecastFragment" >
+         android:label="" >
         <action
             android:id="@+id/action_forecastFragment_to_cityFragment"
             app:destination="@id/cityFragment" />
@@ -22,15 +22,15 @@
     <fragment
         android:id="@+id/cityFragment"
         android:name="com.beeline.forecast.ui.CityFragment"
-        android:label="CityFragment" />
+        android:label="@string/deleteToolbar" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.beeline.forecast.ui.SettingsFragment"
         app:popUpTo="@+id/forecastFragment"
         app:popUpToInclusive="true"
-        android:label="SettingsFragment" />
+        android:label="@string/settings" />
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.beeline.forecast.ui.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="" />
 </navigation>
