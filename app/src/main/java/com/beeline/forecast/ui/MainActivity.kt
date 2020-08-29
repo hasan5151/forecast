@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
     }
 
-    private fun initDb() {
+/*    private fun initDb() {
         when(prefs.isInitial){
             true ->{
                 println("start init")
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
                 println("already init")
             }
         }
-    }
+    }*/
 
     /**
      *  get changes from

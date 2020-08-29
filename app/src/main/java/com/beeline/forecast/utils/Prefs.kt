@@ -8,12 +8,12 @@ import org.koin.core.KoinComponent
 
 class Prefs  (val context: Context) : KoinComponent {
     private val PREFS_FILENAME = "prefs"
-    private val ISINITIAL = "is_initial"
+  // private val ISINITIAL = "is_initial"
     private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0);
 
-    var isInitial : Boolean
+/*    var isInitial : Boolean
         get() = prefs.getBoolean(ISINITIAL,true)
-        set(value) = prefs.edit().putBoolean(ISINITIAL,value).apply()
+        set(value) = prefs.edit().putBoolean(ISINITIAL,value).apply()*/
 
     fun getDefault() : SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(context)
