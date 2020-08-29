@@ -35,9 +35,6 @@ class ForecastFragment : Fragment() {
     private lateinit var placeholderText: TextView
     private lateinit var placeHolderIV: ImageView
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -99,17 +96,17 @@ class ForecastFragment : Fragment() {
         when(item.itemId){
             R.id.settings ->{
                 val action = ForecastFragmentDirections.actionForecastFragmentToSettingsFragment()
-                Navigation.findNavController(requireView()).navigate(action)
+                findNavController(requireView()).navigate(action)
             }
 
             R.id.search ->{
                 val action = ForecastFragmentDirections.actionForecastFragmentToSearchFragment()
-                Navigation.findNavController(requireView()).navigate(action)
+                findNavController(requireView()).navigate(action)
             }
 
             R.id.delete->{
                 val action = ForecastFragmentDirections.actionForecastFragmentToCityFragment()
-                Navigation.findNavController(requireView()).navigate(action)
+                findNavController(requireView()).navigate(action)
             }
         }
         return NavigationUI.onNavDestinationSelected(item,

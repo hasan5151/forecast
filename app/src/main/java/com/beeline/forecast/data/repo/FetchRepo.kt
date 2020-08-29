@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 interface FetchService{
     suspend  fun updateCities(): Response<Boolean>
     suspend fun createCity(id: Int?) : Response<Boolean>
-    suspend fun createDb() : Response<Boolean>
+  //  suspend fun createDb() : Response<Boolean>
 }
 
 /**
@@ -47,7 +47,7 @@ class FetchRepo(private val apiRepo: ApiRepo, private val roomRepo: RoomRepo, pr
         }
         return@withContext Response.Success(false)
     }
-
+/*
     override suspend fun createDb(): Response<Boolean> = withContext(ioDispatcher){
         val group = apiRepo.getGroupWeathers(listOf(1527534,1528675)) // create roomdb for bishkek and osh cities
         if (group is Response.Success){
@@ -59,5 +59,5 @@ class FetchRepo(private val apiRepo: ApiRepo, private val roomRepo: RoomRepo, pr
             return@withContext Response.Error(group.exception)
         }
         return@withContext Response.Success(false)
-    }
+    }*/
 }

@@ -10,6 +10,7 @@ import com.beeline.forecast.data.repo.ApiRepo
 import com.beeline.forecast.data.repo.FetchRepo
 import com.beeline.forecast.data.repo.RoomRepo
 import com.beeline.forecast.data.room.entity.LocalWeather
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ForecastVM constructor(private val apiRepo: ApiRepo,private  val roomRepo: RoomRepo,private val fetchRepo: FetchRepo): ViewModel() {
@@ -19,8 +20,8 @@ class ForecastVM constructor(private val apiRepo: ApiRepo,private  val roomRepo:
 
     var recordedCities:  LiveData<PagedList<LocalWeather>> = MutableLiveData()
 
-    fun createDb(){
-        viewModelScope.launch {
+/*    fun createDb(){
+        viewModelScope.launch{
             _state.value = Response.Loading
             val db =fetchRepo.createDb()
             _state.value = db
@@ -29,7 +30,7 @@ class ForecastVM constructor(private val apiRepo: ApiRepo,private  val roomRepo:
                 db.exception.printStackTrace()
             }
         }
-    }
+    }*/
 
     fun createCity(id : Int?){
         viewModelScope.launch {
@@ -72,5 +73,4 @@ class ForecastVM constructor(private val apiRepo: ApiRepo,private  val roomRepo:
              }
         }
     }
-
 }

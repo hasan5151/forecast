@@ -112,7 +112,7 @@ class SearchFragment  : Fragment(), SearchView.OnQueryTextListener{
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.addcity))
             .setMessage(resources.getString(R.string.city_question))
-            .setNegativeButton(resources.getString(R.string.no)) { dialog, which ->
+            .setNegativeButton(resources.getString(R.string.no)) { dialog, _ ->
                 dialog.dismiss()
             }
             .setPositiveButton(resources.getString(R.string.yes)) { dialog, which ->

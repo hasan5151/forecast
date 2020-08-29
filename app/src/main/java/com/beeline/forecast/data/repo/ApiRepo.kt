@@ -28,7 +28,6 @@ class ApiRepo(private val apiService: ApiService, private val ioDispatcher: Coro
         } catch (e: Exception) {
             return@withContext Response.Error(e)
         }
-
     }
 
     override suspend fun getGroupWeathers(ids : List<Int>?): Response<ListWeather> = withContext(ioDispatcher) {
